@@ -39,8 +39,9 @@ local function MoveShip(event)
 	beetleship.x = beetleship.x + scrollSpeed
 	-- change the transparency of thye ship every time it moves so that it fades out
     beetleship.alpha = beetleship.alpha + 0.01
-    	beetleship:scale(1.002, 1.002)
-    end
+    beetleship:scale(1.002, 1.002)
+end
+
 -- moveShip will be called over and over again 
 Runtime:addEventListener("enterFrame", MoveShip)
 -- Move ship

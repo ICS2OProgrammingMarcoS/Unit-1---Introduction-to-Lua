@@ -59,24 +59,23 @@ areaTextRect.x = display.contentHeight/2
 
 --set the colour of the newtext
 areaTextRect:setTextColor(1, 1, 1)
-
+-- set circle x and y
 myCircle = display.newCircle( 100, 100, radius )
-
 myCircle.anchorX = 0
 myCircle.anchorY = 0
 myCircle.x = display.contentWidth / 6
 myCircle.y = display.contentHeight / 2
 myCircle.strokeWidth = 15
 myCircle:setStrokeColor(0, 1, 0)
-
+-- set area
 areaOfCircle = 3.14 * radius * radius
-
+-- display text
 areaTextCircle = display.newText("The area of this circle with a radius of \n" ..
 	 radius .. " and the area is " .. areaOfCircle .. " pixels².", 0, 0, Arial, textSize)
-
+-- set anchors
 areaTextCircle.anchorX = 0
 areaTextCircle.anchorY = 0
 areaTextCircle.x = display.contentWidth / 2.5
 areaTextCircle.y = display.contentHeight / 2
-
+-- set fill colour
 myCircle:setFillColor(0, 0, 1)
