@@ -1,4 +1,5 @@
 -- Title: TouchAndReact
+-- Name: Marco Sterlini
 -- Course: ICS2O
 -- This program displays an image and when you click on it a different image appers on the screen.
 
