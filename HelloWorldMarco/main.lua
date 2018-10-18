@@ -16,6 +16,9 @@ display. setDefault("background", 100/255, 120/255, 34/255)
 -- create a local varible
 local textObject
 
+local bkgMusic = audio.loadSound( "Sounds/bkgMusic.mp3" )
+local bkgMusicChannel = audio.play(bkgMusic)
+
 -- displays text on the screen at position x = 500 and 500 with
 -- a default font style and font size 70
 textObject = display.newText( "Hello, Marco!", 400, 300, nil, 70 )
@@ -26,11 +29,10 @@ textObject:setTextColor(222/255, 156/255, 245/255)
 
 -- create a local varible
 local textObjectSignature
-
+bkgMusicChannel = audio.play(bkgSound)
 -- display text on the screen at position x = 350, 250, nil, with
 -- a default font style  and font size 50
 textObjectSignature = display.newText ("By: Marco Sterlini", 400, 500, nil, 50 )
-
 
 -- write to the console 
 print("This is so fun!")

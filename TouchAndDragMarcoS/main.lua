@@ -15,10 +15,13 @@ local yellowGirlHeight = yellowGirl.height
 local blueGirl = display.newImageRect("Images/girl5.png", 150, 150)
 local blueGirlWidth = blueGirl.width
 local blueGirlHeight = blueGirl.height
-
+local blueGirlTouched = audio.loadSound( "")
+local blueGirlTouchedChannel
 -- my boolean varibles to keep track of which object I touched first
 local alreadyTouchedYellowGirl = false
 local alreadyTouchedBlueGirl = false
+local popSound = audio.loadSound( "Sounds/popSound.wav" )
+local popSoundChannel
 
 -- set the initial x and y position of myImage
 yellowGirl.x = 400
@@ -36,12 +39,14 @@ local function BlueGirlListener(touch)
   if (touch.phase == "began") then
 	    if (alreadyTouchedYellowGirl == false) then
 		    alreadyTouchedBlueGirl = true
+            popSoundChannel = audio.play(popSound)
 	    end
     end
 
     if( (touch.phase == "moved") and (alreadyTouchedBlueGirl == true) ) then
 	 	blueGirl.x = touch.x
 	 	blueGirl.y = touch.y
+
 	end
 
  
@@ -56,6 +61,7 @@ local function YellowGirlListener(touch)
    if (touch.phase == "began") then
 	    if (alreadyTouchedBlueGirl == false) then
 		    alreadyTouchedYellowGirl = true
+            popSoundChannel = audio.play(popSound)
 	    end
     end
 

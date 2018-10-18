@@ -11,7 +11,8 @@ scrollSpeed = 3
 scrollSpeed2 = 4
 -- background image with width and height
 local backgroundImage = display.newImageRect("Images/background.png", 2048, 1536)
- 
+local boingSound = audio.loadSound( "Sounds/boingSoundEffect.mp3" )
+local boingSoundChannel
 -- character image with width and height
 local beetleship = display.newImageRect("Images/beetleship.png", 200, 200)
 -- character image with width and height
@@ -49,6 +50,7 @@ local function MoveRocketship(event)
 	rocketship.x = rocketship.x - scrollSpeed2
 	rocketship.alpha = rocketship.alpha - 0.001
 	rocketship:scale(0.99777, 0.99777)
+	boingSoundChannel = audio.play(boingSound)
 end
 -- moveRocketship will be called over and over again
 Runtime:addEventListener("enterFrame", MoveRocketship)
