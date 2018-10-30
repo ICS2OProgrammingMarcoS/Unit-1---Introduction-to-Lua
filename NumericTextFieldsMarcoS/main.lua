@@ -84,15 +84,16 @@ local function DecreaseLives()
 	-- cancel the you lose timer remove the third heart
 	if (lives == 3) then
 		heart4.isVisible = false
-
+		AskQuestion()
 	elseif (lives == 2) then	
 		heart3.isVisible = false
-
+		AskQuestion()
 	elseif (lives == 1) then 
 		heart2.isVisible = false
-
+		AskQuestion()
 	elseif (lives == 0) then
 		heart1.isVisible = false
+		AskQuestion()
 	--timer.cancel( countDownTimer )
 		incorrectSoundChannel = audio.play(incorrectSoundChannel)
 		
@@ -103,11 +104,11 @@ local function DecreaseLives()
 		gameOver.x = display.contentWidth/2
 	end
 end
-
+-- update the time
 local function UpdateTime()
-
+	-- make the seconds go down by one second
 	secondsLeft = secondsLeft - 1
-
+	-- add 
 	clockText.text = "Time remaining: " .. secondsLeft
 
 	if (secondsLeft == 0) then
